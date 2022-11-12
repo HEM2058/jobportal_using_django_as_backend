@@ -53,8 +53,11 @@
                             <div class="col-lg-4 col-md-6">
                                 <div class="login-page bg-white shadow rounded p-4">
                                     <div class="text-center">
-                                        <h4 class="mb-4">Login</h4>  
+                                        <h4 class="mb-4">Sign in</h4>  
                                     </div>
+                                    <center>
+                                        <h3 style="color:red">{{msg}}</h3>
+                                    </center>
                                     <form class="login-form" action="{% url 'loginuser'%}" method="POST">
                                         {% csrf_token %}
                                         <div class="row">
@@ -103,7 +106,7 @@
                                                 </ul><!--end icon-->
                                             </div>
                                             <div class="col-12 text-center">
-                                                <p class="mb-0 mt-3"><small class="text-dark mr-2">Don't have an account ?</small> <a href="signup.html" class="text-dark font-weight-bold">Sign Up</a></p>
+                                                <p class="mb-0 mt-3"><small class="text-dark mr-2">Don't have an account ?</small> <a href="{% url 'signup' %}" class="text-dark font-weight-bold">Sign Up</a></p>
                                             </div>
                                         </div>
                                     </form>

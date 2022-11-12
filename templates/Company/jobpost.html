@@ -1,0 +1,136 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Company Profile</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="{% static 'Company/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="{% static 'Company/css/sb-admin-2.min.css' %}" rel="stylesheet">
+
+</head>
+
+<body class="bg-gradient-primary">
+
+    <div class="container">
+
+        <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card-body p-0">
+                <!-- Nested Row within Card Body -->
+                <div class="row">
+                    <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+                    <div class="col-lg-7">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">Job Post Form</h1>
+                            </div>
+                            
+                             <center>
+                                <h3 style="color:red">{{msg}}</h3>
+                             </center>
+                            
+                            <form class="user" action="{% url 'jobsubmit' %}" method="POST">
+                            {% csrf_token %}
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail"
+                                        placeholder="Job Name" name="jobname" value="{{company.company_name}}">
+                                </div>
+                                <div class="form-group">
+                                    <input type="Company Name" class="form-control form-control-user" id="exampleInputEmail"
+                                        placeholder="Company Name" name="companyname" value="{{company.company_name}}">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail"
+                                        placeholder="Company Address" name="companyaddress" value="{{company.company_name}}">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail"
+                                        placeholder="Company Contact" name="companycontact" value="{{company.company_name}}">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail"
+                                        placeholder="Company Email" name="companyemail" value="{{company.company_name}}">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail"
+                                        placeholder="Job Description" name="jobdescription" value="{{company.company_name}}">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail"
+                                        placeholder="Qualification" name="qualification" value="{{company.company_name}}">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail"
+                                        placeholder="Responsibilities" name="responsibilities" value="{{company.company_name}}">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail"
+                                        placeholder="Job Location" name="location" value="{{company.company_name}}">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail"
+                                        placeholder="Salary Package" name="salarypackage" value="{{company.company_name}}">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail"
+                                        placeholder="Experience" name="experience" value="{{company.company_name}}">
+                                </div>
+
+                            
+                          
+                             <div class="row">
+                                <div class="col-md-12">
+                                 <ul class="list-inline mb-0">
+                                     <li class="list-inline-item">
+                                         <div class="input-group mt-2 mb-2">
+                                             <div class="custom-file">
+                                                 <input type="file" class="custom-file-input" name="logo_pic" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" value="{{can.profile_pic}}">
+                                                 <label class="custom-file-label rounded"><i class="mdi mdi-cloud-upload mr-1"></i> Upload here</label>
+                                             </div>
+                                         </div>
+                                     </li>
+ 
+                                     <li class="list-inline-item">
+                                         <h6 class="text-muted mb-0">Upload your Company Logo.</h6>
+                                     </li>
+                                 </ul>
+                                </div>
+                              </div>
+ 
+                              <button  class="btn btn-primary btn-user btn-block">Post Job</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="{% static 'Company/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'Company/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="{% static 'Company/vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="{% static 'Company/js/sb-admin-2.min.js' %}"></script>
+
+</body>
+
+</html>

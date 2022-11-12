@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Jobya - Responsive Job Board HTML Template</title>
+    <title>HMRJP - Hamro Job Portal</title>
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <meta name="author" content="Themesdesign" />
@@ -30,7 +30,7 @@
 
     <!-- Custom  Css -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}" />
-
+   
 </head>
 
 <body>
@@ -52,11 +52,11 @@
             <div class="container">
                 <div class="float-left">
                     <div class="phone">
-                        <i class="mdi mdi-phone-classic"></i> +1 800 123 45 67
+                        <i class="mdi mdi-phone-classic"></i> +977-9864766958
                     </div>
                     <div class="email">
                         <a href="#">
-                            <i class="mdi mdi-email"></i> Support@mail.com
+                            <i class="mdi mdi-email"></i> hmrjp@gmail.com
                         </a>
                     </div>
                 </div>
@@ -110,7 +110,7 @@
                     <li class="has-submenu">
                         <a href="javascript:void(0)">Jobs</a><span class="menu-arrow"></span>
                         <ul class="submenu">
-                            <li><a href="job-list.html">Job List</a></li>
+                            <li><a href="{% url 'candidatejoblist' %}">Job List</a></li>
                             <li><a href="job-grid.html">Job Grid</a></li>
                             <li><a href="job-details.html">Job Details</a></li>
                             <li><a href="job-details-2.html">Job Details-2</a></li>
@@ -176,6 +176,34 @@
   <!--Template Pages load-->
 
 {% endblock%}
+ <!-- subscribe start -->
+ <section class="section bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-5">
+                <div class="float-left position-relative notification-icon mr-2">
+                    <i class="mdi mdi-bell-outline text-primary"></i>
+                    <span class="badge badge-pill badge-danger">1</span>
+                </div>
+                <h5 class="mt-2 mb-0">Your Job Notification</h5>
+            </div>
+            <div class="col-lg-8 col-md-7 mt-4 mt-sm-0">
+                <form>
+                    <div class="form-group mb-0">
+                        <div class="input-group mb-0">
+                            <input name="email" id="email" type="email" class="form-control" placeholder="Your email :" required="" aria-describedby="newssubscribebtn">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary submitBnt" type="submit" id="newssubscribebtn">Subscribe</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- subscribe end -->
+
 
  <!-- footer start -->
  <footer class="footer">
@@ -183,7 +211,7 @@
         <div class="row">
             <div class="col-lg-3 col-12 mb-0 mb-md-4 pb-0 pb-md-2">
                 <a href="javascript:void(0)"><img src="images/logo-light.png" height="20" alt=""></a>
-                <p class="mt-4">At vero eos et accusamus et iusto odio dignissim os ducimus qui blanditiis praesentium</p>
+                <p class="mt-4">Connect with us on social media</p>
                 <ul class="social-icon social list-inline mb-0">
                     <li class="list-inline-item"><a href="#" class="rounded"><i class="mdi mdi-facebook"></i></a></li>
                     <li class="list-inline-item"><a href="#" class="rounded"><i class="mdi mdi-twitter"></i></a></li>
@@ -221,8 +249,8 @@
                 <p class="text-white mb-4 footer-list-title f-17">Business Hours</p>
                 <ul class="list-unstyled text-foot mt-4 mb-0">
                     <li>Monday - Friday : 9:00 to 17:00</li>
-                    <li class="mt-2">Saturday : 10:00 to 15:00</li>
-                    <li class="mt-2">Sunday : Day Off (Holiday)</li>
+                    <li class="mt-2">Sunday: 10:00 to 15:00</li>
+                    <li class="mt-2">Saturday: Day Off (Holiday)</li>
                 </ul>
             </div>
         </div>
@@ -235,7 +263,7 @@
         <div class="row justify-content-center">
             <div class="col-12">
                 <div class="">
-                    <p class="mb-0">© 2019 Jobya. Design with <i class="mdi mdi-heart text-danger"></i> by Themesdesign.</p>
+                    <p class="mb-0">© 2022 HMRJP.<i class="mdi mdi-heart text-danger"></i> by Hem Raj Pandey.</p>
                 </div>
             </div>
         </div>
