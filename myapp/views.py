@@ -254,3 +254,33 @@ def CompanyLogout(request):
      return redirect('loginpage')
     
 
+def ApplyJob(request,pk):
+    user = UserMaster.objects.get(id=request.session.get('id'))
+    if user:
+     cand = Candidate.objects.get(user_id=user)
+     Job = JobDetails.objects.get(pk=pk)
+    return render(request,'apply.html',{'user':user,'can':cand,'job':Job})
+
+def JobSave(request,pk):
+    user = UserMaster.objects.get(id=request.session.get('id'))
+    if user:
+        cand = Candidate.objects.get(user_id=user)
+        job = JobDetails.objects.get(pk=pk)
+        firstname = request.POST.get('firstname')
+        lastname = request.POST.get('lastname')
+        contact = request.POST.get('contact')
+        country = request.POST.get('country')
+        state = request.POST.get('state')
+        city = request.POST.get('city')
+        address = request.POST.get('address')
+        edu_level = request.POST.get('edu_level')
+        experience = request.POST.get('experience')
+        dob = request.POST.get('dob')
+        gender = request.POST.get('gender')
+        jobdescription = request.POST.get('jobdescription')
+        resume = request.FILES.get('resume')
+
+        apply = ApplyList.objects.create(candidate_id=cand,job_id=job,firstname=firstname,lastname=lastname,contact=contact,country=country,state=state,city=city,address=address,edu_level=edu_level,experience=experience,dob=dob,gender=gender,jobdescription=jobdescription,resume=resume)
+        message = "Job Apply Successfully !"
+        return render(request,'job-list.html',{'msg':message})
+        

@@ -10,6 +10,8 @@ urlpatterns = [
    path("profile/<int:pk>",views.ProfilePage,name="profile"),
    path("profileupdate/<int:pk>",views.ProfileUpdate,name="profileupdate"),
    path("candidatejoblist/",views.CandidateJobList,name="candidatejoblist"),
+   path("applyjob/<int:pk>",views.ApplyJob,name ="applyjob"),
+   path("jobsave/<int:pk>",views.JobSave,name="jobsave"),
 
 
     ############### Company Side ###############
@@ -21,7 +23,7 @@ urlpatterns = [
     ############### Company Side:Job Post ###############
    path("jobpost/",views.JobPost,name="jobpost"),
    path("jobsubmit/",views.JobPostSubmit,name="jobsubmit"),
-   path("joblist/",views.JobList,name="joblist")
- 
+   path("joblist/",views.JobList,name="joblist"),
+   path("applyjob/<int:pk>",views.ApplyJob,name ="applyjob")
 
 ]
